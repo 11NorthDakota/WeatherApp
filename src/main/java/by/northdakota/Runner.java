@@ -25,7 +25,7 @@ public class Runner {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите нужный город");
         var answer = sc.nextLine();
-        var city = getCityByName(answer,cityList);
+        var city = City.getCityByName(answer,cityList);
 
         WeatherParser weatherParser = new WeatherParser();
 
@@ -36,12 +36,5 @@ public class Runner {
         weatherParser.doParse();
 
     }
-    public static City getCityByName(String name,List<City> cityList){
-        for(City city:cityList){
-            if(name.equalsIgnoreCase(city.getCityName())){
-                return city;
-            }
-        }
-        return null;
-    }
+
 }

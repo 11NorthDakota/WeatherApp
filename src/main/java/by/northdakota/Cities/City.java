@@ -1,5 +1,7 @@
 package by.northdakota.Cities;
 
+import java.util.List;
+
 public class City {
     private String cityName;
     private String country;
@@ -45,7 +47,14 @@ public class City {
     public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
-
+    public static City getCityByName(String name, List<City> cityList){
+        for(City city:cityList){
+            if(name.equalsIgnoreCase(city.getCityName())){
+                return city;
+            }
+        }
+        return null;
+    }
 
     @Override
     public String toString() {
